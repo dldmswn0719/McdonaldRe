@@ -5,6 +5,7 @@ import Search from '../components/Search'
 import MainMenu from '../components/MainMenu'
 import MainLive from '../components/MainLive'
 import MainYoutube from '../components/MainYoutube'
+import Footer from '../components/Footer'
 
 function Main() {
     return (
@@ -15,6 +16,7 @@ function Main() {
             <MainMenu />
             <MainLive />
             <MainYoutube />
+            <Footer />
         </>
     )
 }

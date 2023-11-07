@@ -69,7 +69,7 @@ function MainLive() {
                     </div>
                     <Swiper
                     spaceBetween={30}
-                    slidesPerView={3}
+                    slidesPerView={1}
                     loop={true}
                     autoplay={{
                         delay: 6000,
@@ -79,6 +79,16 @@ function MainLive() {
                     pagination={{clickable: true}}
                     modules={[Autoplay, Navigation ,Pagination]}
                     id='swiper'
+                    breakpoints={{
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 30,
+                        },
+                        }}
                     >
                         {
                             LiveImg.map((e,i)=>{
