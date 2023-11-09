@@ -6,7 +6,7 @@ function MainYoutube() {
              <div className="w-full px-5 my-10">
                 <div className="max-w-7xl mx-auto">
                     <div>
-                        <p className='text-3xl font-bold relative after:absolute after:w-72 after:h-1 after:bg-[#F9B900] after:left-0 after:-bottom-2 mb-10 '>McDonald’s  Youtube</p>
+                        <p className='text-3xl font-bold relative after:absolute after:w-72 after:h-1 after:bg-[#F9B900] after:left-0 after:-bottom-2 mb-10 '>McDonald’s Youtube</p>
                     </div>
                     <div className="w-full flex">
                         <div className="w-[30%]">
@@ -31,8 +31,7 @@ function MainYoutube() {
                             <div className="h-16 bg-[#FFE392] text-white text-center flex items-center justify-center">
                                 <ul>
                                     <li>[맥도날드x뉴진스]</li>
-                                    <li>뉴진스와 함께 Chicken Dance!</li>
-                                    
+                                    <li>뉴진스와 함께 Chicken Dance!</li>                                  
                                 </ul>
                             </div>
                         </div>

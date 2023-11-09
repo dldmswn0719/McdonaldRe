@@ -52,7 +52,7 @@ function Banner() {
 
     return (
         <>
-            <div className="w-full relative">
+            <div className="w-full relative hidden md:block">
                 <div className="w-[calc(100%-4px)] mx-[2px]">
                     <Swiper
                     spaceBetween={0}
