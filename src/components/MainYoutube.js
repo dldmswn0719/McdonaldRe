@@ -1,6 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function MainYoutube() {
+
+    const YoutubeList = [
+        { title: '매콤빠삭하게 레벨 업! 맥크리스피 스리라차 마요', url: "https://www.youtube.com/embed/bdWM4GO6Hz0?si=0nUsj4pUlPegInxV" },
+        { title: '맥도날드 M오더 출시', url: "https://www.youtube.com/embed/0dX4PXoQ9nI?si=GZdni5kIUJnAdK6B" },
+        { title: '어서와, 제주 근무는 처음이지 워킹홀리데이 in 제주', url: "https://www.youtube.com/embed/e_LkIs6prWg?si=yGlYIjKD1DktegU7" },
+        { title: '갓성비 간식 맛집 해피 스낵!', url: "https://www.youtube.com/embed/k6r5Ixj_MC4?si=oUieUHmjhcfuSKEP" },
+        { title: '[맥도날드x뉴진스] 뉴진스와 함께 Chicken Dance!', url: "https://www.youtube.com/embed/NDfh8m20dy4?si=ng4OZtL9UZmJ34co" },
+    ]
+
+    const [YoutubeUrl, setYoutubeUrl] = useState(YoutubeList[0].url);
+
+    const [selectedTitle, setSelectedTitle] = useState(0);
+
+    const TitleClick = (url, index) => {
+        setYoutubeUrl(url);
+        setSelectedTitle(index);
+    };
+
     return (
         <>
              <div className="w-full px-5 my-10">
@@ -10,33 +28,19 @@ function MainYoutube() {
                     </div>
                     <div className="w-full flex">
                         <div className="w-[30%]">
-                            <div className="h-16 bg-[#F9B900] text-white text-center flex items-center justify-center">
-                                <ul>
-                                    <li>매콤빠삭하게 레벨 업!</li>
-                                    <li>맥크리스피 스리라차 마요</li>
-                                </ul>
-                            </div>
-                            <div className="h-16 bg-[#FFE392] border-b border-[#F9B900] text-white text-center flex items-center justify-center">
-                                <p>맥도날드 M오더 출시</p>
-                            </div>
-                            <div className="h-16 bg-[#FFE392] border-b border-[#F9B900] text-white text-center flex items-center justify-center">
-                                <ul>
-                                    <li>어서와, 제주 근무는 처음이지</li>
-                                    <li>워킹홀리데이 in 제주</li>
-                                </ul>
-                            </div>
-                            <div className="h-16 bg-[#FFE392] border-b border-[#F9B900] text-white text-center flex items-center justify-center">
-                                <p>갓성비 간식 맛집 해피 스낵!</p>
-                            </div>
-                            <div className="h-16 bg-[#FFE392] text-white text-center flex items-center justify-center">
-                                <ul>
-                                    <li>[맥도날드x뉴진스]</li>
-                                    <li>뉴진스와 함께 Chicken Dance!</li>                                  
-                                </ul>
-                            </div>
+                            {/* FFE392 */}
+                            {
+                                YoutubeList.map((e, i) => (
+                                    <div key={i} onClick={() => TitleClick(e.url ,i)} className={`h-16 text-white text-center flex items-center justify-center cursor-pointer ${selectedTitle === i ? 'bg-[#F9B900]' : 'bg-[#FFE392]'}`}>
+                                        <ul>
+                                            <li>{e.title}</li>
+                                        </ul>
+                                    </div>
+                                ))
+                            }
                         </div>
                         <div className="w-[70%]">
-                            <iframe width="100%" height="320" src="https://www.youtube.com/embed/NDfh8m20dy4?si=ng4OZtL9UZmJ34co" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                            <iframe width="100%" height="320" src={YoutubeUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
