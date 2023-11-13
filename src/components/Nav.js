@@ -1,4 +1,4 @@
-import { faAngleDown, faEarthAmericas } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown, faEarthAmericas } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 
@@ -13,7 +13,15 @@ function Nav() {
     ];
 
     const [menuActive,setMenuActive] = useState(false);
-    const [isSubActive,setIsSubActive] = useState(false)
+    const [isSubActive,setIsSubActive] = useState(false);
+    const [mnavActive,setMnavActive] = useState(false)
+    
+    const [subActive,setSubActive] = useState(NavItems.map(()=>false))
+
+    const toggleSubMenu = (i) => {
+        const newSubActive = subActive.map((active, index) => index === i ? !active : false);
+        setSubActive(newSubActive);
+    };
 
     const toggleMenu = () =>{
         setMenuActive(!menuActive)
@@ -72,6 +80,7 @@ function Nav() {
                     </div>
                 }
             </div>
+
             {/* 모바일 햄버거버튼 */}
             <div onClick={toggleMenu} className="fixed right-5 top-4 z-[51] cursor-pointer md:hidden">
                 <div className={`w-[30px] h-[5px] bg-[#F9B900] rounded m-[5px] transition-all duration-500 ${menuActive && `rotate-45 translate-y-[10px]`}`}></div>
@@ -86,8 +95,15 @@ function Nav() {
                     {
                         NavItems.map((e,i)=>{
                             return(
-                                <li className='cursor-pointer border-b py-5' key={i}>
+                                <li className={`cursor-pointer border-b py-5 ${mnavActive === i ? 'text-[#ffbc0d]' : 'text-black'}`} key={i} onClick={()=>{toggleSubMenu(i);setMnavActive(i);}}>
                                     {e}
+                                    {
+                                        subActive[i] && NavSubItems[i].map((el, index) => {
+                                            return(
+                                                <p key={index} className="hover:text-[#ffbc0d] mt-1 hover:font-bold cursor-pointer py-3 text-[#808080]">{el}</p>
+                                            )
+                                        })
+                                    }
                                 </li>
                             )
                         })

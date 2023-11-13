@@ -26,8 +26,8 @@ function MainYoutube() {
                     <div>
                         <p className='text-3xl font-bold relative after:absolute after:w-72 after:h-1 after:bg-[#F9B900] after:left-0 after:-bottom-2 mb-10 '>McDonald’s Youtube</p>
                     </div>
-                    <div className="w-full flex">
-                        <div className="w-[30%]">
+                    <div className="w-full flex flex-wrap">
+                        <div className="basis-[30%]">
                             {/* FFE392 */}
                             {
                                 YoutubeList.map((e, i) => (
@@ -39,7 +39,7 @@ function MainYoutube() {
                                 ))
                             }
                         </div>
-                        <div className="w-[70%]">
+                        <div className="basis-[70%]">
                             <iframe width="100%" height="320" src={YoutubeUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </div>
                     </div>

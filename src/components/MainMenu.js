@@ -4,6 +4,7 @@ function MainMenu() {
     const [isActive,setIsActive] = useState(0);
 
     const Category = ["버거" ,"맥모닝" ,"해피스낵" , "맥카페&음료"];
+
     const MenuItems = {
         "버거" : [
             {
@@ -84,7 +85,7 @@ function MainMenu() {
 
     const handleCategoryClick = (i) => {
         setIsActive(i);
-        setSelectMenu(MenuItems[Category[i]]);  // 선택된 카테고리의 메뉴 아이템들로 업데이트
+        setSelectMenu(MenuItems[Category[i]]);
     };
 
     return (
@@ -99,7 +100,7 @@ function MainMenu() {
                             {
                                 Category.map((e,i)=>{
                                     return(
-                                        <li onClick={()=>{handleCategoryClick(i)}}  className={`mr-3 text-xl cursor-pointer ${isActive === i ? 'text-[#F9B900]' : 'text-black'}`} key={i}>{e}</li>
+                                        <li onClick={()=>{handleCategoryClick(i)}}  className={`mr-3 md:text-xl cursor-pointer ${isActive === i ? 'text-[#F9B900]' : 'text-black'}`} key={i}>{e}</li>
                                     )
                                 })
                             }
