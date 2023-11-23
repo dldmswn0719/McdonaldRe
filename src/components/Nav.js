@@ -29,7 +29,7 @@ function Nav() {
 
     return (
         <>
-            <div className="w-full px-5 sticky top-0 bg-white pb-4 z-50 border-b border-[#F9B900]">
+            <div className="w-full px-5 sticky top-0 bg-white py-4 z-50 border-b border-[#F9B900]">
                 <div className="max-w-7xl mx-auto hidden md:block">
                     <ul className='flex justify-end pt-2'>
                         <li className='cursor-pointer pl-3'>
@@ -82,7 +82,7 @@ function Nav() {
             </div>
 
             {/* 모바일 햄버거버튼 */}
-            <div onClick={toggleMenu} className="fixed right-5 top-4 z-[51] cursor-pointer md:hidden">
+            <div onClick={toggleMenu} className="fixed right-5 top-6 z-[51] cursor-pointer md:hidden">
                 <div className={`w-[30px] h-[5px] bg-[#F9B900] rounded m-[5px] transition-all duration-500 ${menuActive && `rotate-45 translate-y-[10px]`}`}></div>
                 <div className={`w-[30px] h-[5px] bg-[#F9B900] rounded m-[5px] transition-all duration-500 ${menuActive && `opacity-0 -translate-x-8`}`}></div>
                 <div className={`w-[30px] h-[5px] bg-[#F9B900] rounded m-[5px] transition-all duration-500 ${menuActive && `-rotate-45 -translate-y-[10px]`}`}></div>
