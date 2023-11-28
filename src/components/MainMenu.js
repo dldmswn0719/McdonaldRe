@@ -90,13 +90,11 @@ function MainMenu() {
 
     return (
         <>
-            <div className="w-full px-5 py-10">
-                <div className="max-w-7xl mx-auto">
-                    <div>
-                        <p className='text-3xl font-bold relative after:absolute after:w-20 after:h-1 after:bg-[#F9B900] after:left-0 after:-bottom-2'>Menu</p>
-                    </div>
+            <div className="w-full py-10">
+                <div className="max-w-7xl px-[3%] mx-auto">
+                    <p className='md:text-3xl text-2xl font-bold relative after:absolute md:after:w-20 after:w-16 after:h-1 after:bg-[#F9B900] after:left-0 after:-bottom-2'>Menu</p>
                     <div className="lg:mt-10 md:mt-8 mt-5">
-                        <ul className='flex'>
+                        <ul className='flex flex-wrap'>
                             {
                                 Category.map((e,i)=>{
                                     return(
@@ -110,9 +108,9 @@ function MainMenu() {
                         {
                             selectMenu.map((e,i)=>{
                                 return(
-                                    <div key={i} className="cursor-pointer border rounded-[30px] lg:basis-[23%] md:basis-[49%] basis-full h-auto mt-5 lg:mt-0">
+                                    <div key={i} className="cursor-pointer border rounded-3xl lg:basis-[23%] md:basis-[49%] basis-full h-auto mt-5 lg:mt-0">
                                         <img className='w-full' src={e.img} alt={e.desc} />
-                                        <div className="bg-[#FFDD79] py-5 rounded-[0px_0px_30px_30px]">
+                                        <div className="bg-[#FFDD79] py-5 rounded-[0px_0px_24px_24px]">
                                             <p className='text-white text-center text-lg font-medium'>{e.desc}</p>
                                         </div>
                                     </div>

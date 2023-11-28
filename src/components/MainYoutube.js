@@ -21,17 +21,14 @@ function MainYoutube() {
 
     return (
         <>
-             <div className="w-full px-5 my-10">
-                <div className="max-w-7xl mx-auto">
-                    <div>
-                        <p className='text-3xl font-bold relative after:absolute after:w-72 after:h-1 after:bg-[#F9B900] after:left-0 after:-bottom-2 mb-10 '>McDonald’s Youtube</p>
-                    </div>
+             <div className="w-full my-10">
+                <div className="max-w-7xl px-[3%] mx-auto">
+                    <p className='md:text-3xl text-2xl font-bold relative after:absolute md:after:w-72 after:w-56 after:h-1 after:bg-[#F9B900] after:left-0 after:-bottom-2 mb-10 '>McDonald’s Youtube</p>
                     <div className="w-full flex flex-wrap">
-                        <div className="basis-[30%]">
-                            {/* FFE392 */}
+                        <div className="basis-[30%] hidden md:block">
                             {
                                 YoutubeList.map((e, i) => (
-                                    <div key={i} onClick={() => TitleClick(e.url ,i)} className={`h-16 text-white text-center flex items-center justify-center cursor-pointer ${selectedTitle === i ? 'bg-[#F9B900]' : 'bg-[#FFE392]'}`}>
+                                    <div key={i} onClick={() => TitleClick(e.url ,i)} className={`h-16 text-white text-center flex items-center justify-center cursor-pointer px-1 ${selectedTitle === i ? 'bg-[#F9B900]' : 'bg-[#FFE392]'}`}>
                                         <ul>
                                             <li>{e.title}</li>
                                         </ul>
@@ -39,8 +36,21 @@ function MainYoutube() {
                                 ))
                             }
                         </div>
-                        <div className="basis-[70%]">
-                            <iframe width="100%" height="320" src={YoutubeUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <div className="basis-full md:hidden">
+                            {
+                                YoutubeList.map((e,i)=>{
+                                    return(
+                                        <div key={i} onClick={() => TitleClick(e.url ,i)} className={`h-14 text-white text-center flex items-center justify-center cursor-pointer p-1 ${selectedTitle === i ? 'bg-[#F9B900]' : 'bg-[#FFE392]'}`}>
+                                            <ul>
+                                                <li>{e.title}</li>
+                                            </ul>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                        <div className="md:basis-[70%] basis-full">
+                            <iframe width="100%" height="320" src={YoutubeUrl} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                         </div>
                     </div>
                 </div>

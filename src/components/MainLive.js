@@ -62,11 +62,9 @@ function MainLive() {
     ]
     return (
         <>
-            <div className="w-full px-5">
-                <div className="max-w-7xl mx-auto">
-                    <div>
-                        <p className='text-3xl font-bold relative after:absolute after:w-60 after:h-1 after:bg-[#F9B900] after:left-0 after:-bottom-2 mb-10 '>McDonald’s LIVE</p>
-                    </div>
+            <div className="w-full">
+                <div className="max-w-7xl px-[3%] mx-auto">
+                    <p className='md:text-3xl text-2xl font-bold relative after:absolute md:after:w-60 after:w-48 after:h-1 after:bg-[#F9B900] after:left-0 after:-bottom-2 mb-10 '>McDonald’s LIVE</p>
                     <Swiper
                     spaceBetween={30}
                     slidesPerView={1}
@@ -94,7 +92,7 @@ function MainLive() {
                             LiveImg.map((e,i)=>{
                                 return (
                                     <SwiperSlide key={i} className='relative'>
-                                        <img className='w-full rounded-[30px]' src={e.img} alt={e.desc} />
+                                        <img className='w-full rounded-3xl' src={e.img} alt={e.desc} />
                                     </SwiperSlide>
                                 )
                             })

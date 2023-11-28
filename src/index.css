@@ -19,6 +19,10 @@ a{text-decoration: none; color: black;}
 .swiper-pagination-bullet{
      --swiper-pagination-bullet-inactive-color : #fff !important;
 }
+@media screen and (max-width: 768px) {
+     .swiper-button-next:after {display: none;}
+     .swiper-button-prev:after {display: none;}      
+}
 .swiper-pagination-bullet-active {
      --swiper-theme-color: rgba(255, 255, 255, 0.8);
      --swiper-pagination-bullet-width: 40px;

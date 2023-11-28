@@ -30,7 +30,7 @@ function Nav() {
     return (
         <>
             <div className="w-full px-5 sticky top-0 bg-white py-4 z-50 border-b border-[#F9B900]">
-                <div className="max-w-7xl mx-auto hidden md:block">
+                <div className="max-w-7xl mx-auto hidden lg:block">
                     <ul className='flex justify-end pt-2'>
                         <li className='cursor-pointer pl-3'>
                             <p>임차문의</p>
@@ -43,14 +43,14 @@ function Nav() {
                         </li>
                     </ul>
                 </div>
-                <div className="max-w-7xl mx-auto flex justify-between items-center">
-                    <img src="./../Images/logo.png" alt="logo" className='md:w-20 md:h-20 w-12 h-12' />
-                    <div className="basis-4/5 hidden md:block">
-                        <ul className='flex justify-between'>
+                <div className="max-w-7xl mx-auto flex items-center">
+                    <img src="./../Images/logo.png" alt="logo" className='md:w-20 md:h-20 w-12 h-12 mr-6' />
+                    <div className="basis-4/5 hidden lg:block">
+                        <ul className='flex justify-around'>
                             {
                                 NavItems.map((e,i)=>{
                                     return(
-                                        <li onMouseOver={()=>setIsSubActive(true)} className="text-lg cursor-pointer relative hover:font-bold after:absolute after:w-full after:h-0.5 after:bg-[#F9B900] after:-bottom-1 after:left-0 after:transition-all after:duration-500 after:scale-x-0 hover:after:scale-x-100" key={i}>{e}</li>
+                                        <li onMouseOver={()=>setIsSubActive(true)} className={`text-lg cursor-pointer relative hover:font-bold after:absolute after:w-full after:h-0.5 after:bg-[#F9B900] after:-bottom-1 after:left-0 after:transition-all after:duration-500 after:scale-x-0 hover:after:scale-x-100 ${i === 0 && 'ml-3'}`} key={i}>{e}</li>
                                     )
                                 })
                             }
@@ -59,13 +59,13 @@ function Nav() {
                 </div>
                 {
                     isSubActive &&
-                    <div onMouseLeave={()=>setIsSubActive(false)} className="w-full left-0 absolute bg-white">
-                        <div className="flex max-w-5xl mx-auto">
+                    <div onMouseLeave={()=>setIsSubActive(false)} className="w-full left-0 absolute bg-white py-5">
+                        <div className="flex max-w-7xl mx-auto justify-center">
                             {
                                 NavSubItems.map((e, i) => {
                                     return(
-                                        <ul key={i} className="basis-[80%]">
-                                            {
+                                        <ul key={i} className="hidden lg:block basis-[20%]">
+                                            { 
                                                 e.map((el, index) => {
                                                     return(
                                                         <li key={index} className="hover:text-[#ffbc0d] hover:font-bold cursor-pointer py-3 text-[#808080]">{el}</li>
@@ -82,12 +82,12 @@ function Nav() {
             </div>
 
             {/* 모바일 햄버거버튼 */}
-            <div onClick={toggleMenu} className="fixed right-5 top-6 z-[51] cursor-pointer md:hidden">
-                <div className={`w-[30px] h-[5px] bg-[#F9B900] rounded m-[5px] transition-all duration-500 ${menuActive && `rotate-45 translate-y-[10px]`}`}></div>
-                <div className={`w-[30px] h-[5px] bg-[#F9B900] rounded m-[5px] transition-all duration-500 ${menuActive && `opacity-0 -translate-x-8`}`}></div>
-                <div className={`w-[30px] h-[5px] bg-[#F9B900] rounded m-[5px] transition-all duration-500 ${menuActive && `-rotate-45 -translate-y-[10px]`}`}></div>
+            <div onClick={toggleMenu} className="fixed right-5 top-6 md:top-10 z-[51] cursor-pointer lg:hidden">
+                <div className={`md:w-8 w-[30px] md:h-[7px] h-[5px] bg-[#F9B900] rounded m-[5px] transition-all duration-500 ${menuActive && `rotate-45 translate-y-[10px] md:translate-y-[12px]`}`}></div>
+                <div className={`md:w-8 w-[30px] md:h-[7px] h-[5px] bg-[#F9B900] rounded m-[5px] transition-all duration-500 ${menuActive && `opacity-0 -translate-x-8`}`}></div>
+                <div className={`md:w-8 w-[30px] md:h-[7px] h-[5px] bg-[#F9B900] rounded m-[5px] transition-all duration-500 ${menuActive && `-rotate-45 -translate-y-[10px] md:-translate-y-[12px]`}`}></div>
             </div>
-            <div className={`w-full h-full fixed bg-white top-0 z-50 p-12 box-border transition-all duration-500 md:hidden ${menuActive ? 'left-0' : 'left-full'}`}>
+            <div className={`w-full h-full fixed bg-white top-0 z-50 p-12 box-border transition-all duration-500 lg:hidden ${menuActive ? 'left-0' : 'left-full'}`}>
                 <ul>
                     <li>
                         <img src="./../Images/logo.png" alt="logo" className='w-16 h-16' />
@@ -95,7 +95,7 @@ function Nav() {
                     {
                         NavItems.map((e,i)=>{
                             return(
-                                <li className={`cursor-pointer border-b py-5 ${mnavActive === i ? 'text-[#ffbc0d]' : 'text-black'}`} key={i} onClick={()=>{toggleSubMenu(i);setMnavActive(i);}}>
+                                <li className={`md:text-lg cursor-pointer border-b py-5 ${mnavActive === i ? 'text-[#ffbc0d]' : 'text-black'}`} key={i} onClick={()=>{toggleSubMenu(i);setMnavActive(i);}}>
                                     {e}
                                     {
                                         subActive[i] && NavSubItems[i].map((el, index) => {

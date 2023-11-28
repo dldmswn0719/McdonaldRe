@@ -53,7 +53,7 @@ function Banner() {
     return (
         <>
             <div className="w-full relative hidden md:block">
-                <div className="w-[calc(100%-4px)] mx-[2px]">
+                <div className="w-[calc(100%-4px)] mx-[3px]">
                     <Swiper
                     spaceBetween={0}
                     slidesPerView={1}
