@@ -29,7 +29,7 @@ function Nav() {
 
     return (
         <>
-            <div className="w-full px-5 sticky top-0 bg-white py-4 z-50 border-b border-[#F9B900]">
+            <div className="w-full px-5 sticky top-0 bg-white py-4 z-50">
                 <div className="max-w-7xl mx-auto hidden lg:block">
                     <ul className='flex justify-end pt-2'>
                         <li className='cursor-pointer pl-3'>
@@ -44,7 +44,7 @@ function Nav() {
                     </ul>
                 </div>
                 <div className="max-w-7xl mx-auto flex items-center">
-                    <img src="./../Images/logo.png" alt="logo" className='md:w-20 md:h-20 w-12 h-12 mr-6' />
+                    <img src="./../Images/logo.png" alt="logo" className='md:w-20 md:h-20 w-12 h-12 mr-6 my-2' />
                     <div className="basis-4/5 hidden lg:block">
                         <ul className='flex justify-around'>
                             {
@@ -59,12 +59,12 @@ function Nav() {
                 </div>
                 {
                     isSubActive &&
-                    <div onMouseLeave={()=>setIsSubActive(false)} className="w-full left-0 absolute bg-white py-5">
+                    <div onMouseLeave={()=>setIsSubActive(false)} className="w-full border-t left-0 absolute bg-white py-5">
                         <div className="flex max-w-7xl mx-auto justify-center">
                             {
                                 NavSubItems.map((e, i) => {
                                     return(
-                                        <ul key={i} className="hidden lg:block basis-[20%]">
+                                        <ul key={i} className="pl-16 hidden lg:block basis-[19%]">
                                             { 
                                                 e.map((el, index) => {
                                                     return(
@@ -101,7 +101,7 @@ function Nav() {
                                         subActive[i] && NavSubItems[i].map((el, index) => {
                                             return(
                                                 <p key={index} className="hover:text-[#ffbc0d] mt-1 hover:font-bold cursor-pointer py-3 text-[#808080]">{el}</p>
-                                            )
+                                            )   
                                         })
                                     }
                                 </li>
