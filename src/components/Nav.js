@@ -33,13 +33,13 @@ function Nav() {
                 <div className="max-w-7xl mx-auto hidden lg:block">
                     <ul className='flex justify-end pt-2'>
                         <li className='cursor-pointer pl-3'>
-                            <p>임차문의</p>
+                            <p onClick={()=>alert("개발중인 서비스입니다.")}>임차문의</p>
                         </li>
                         <li className='cursor-pointer pl-3'>
-                            <p>RECRUIT</p>
+                            <p onClick={()=>alert("개발중인 서비스입니다.")}>RECRUIT</p>
                         </li>
                         <li>
-                            <FontAwesomeIcon icon={faEarthAmericas} className='cursor-pointer pl-3 text-lg' />
+                            <FontAwesomeIcon onClick={()=>alert("개발중인 서비스입니다.")} icon={faEarthAmericas} className='cursor-pointer pl-3 text-lg' />
                         </li>
                     </ul>
                 </div>
